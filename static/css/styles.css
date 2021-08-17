@@ -1,5 +1,5 @@
 .modal-card {
-    border-radius: 15px !important;
+    border-radius: 0px !important;
 }
 
 .modal-card-title {
@@ -8,6 +8,7 @@
 
 .modal-card-head {
     background-color: #787A91 !important;
+    border-radius: 0px !important;
 }
 
 .modal-card-foot {
