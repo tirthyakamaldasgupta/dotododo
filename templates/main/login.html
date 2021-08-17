@@ -1,34 +1,29 @@
-{% extends 'common/base.html' %}
 {% load static %}
 {% load socialaccount %}
 
-{% block title %}Login{% endblock %}
-
-{% block body %}
-    <br>
-    <br>
-    <div class="container" id="login-card-container">
-        <div class="card">
-            <div class="card-body">
-                <h5 class="card-title">Login</h5>
-                <hr>
-                <a href="{% provider_login_url "google" %}" class="nav-link active btn btn-primary">
+<div class="modal" id="login-modal">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+        <header class="modal-card-head">
+            <h2 class="modal-card-title">Login</h2>
+            <button class="delete" aria-label="close" id="modal-close"></button>
+        </header>
+        <center>
+            <section class="modal-card-body">
+                <br>
+                <a href="{% provider_login_url "google" %}" class="button is-primary is-medium">
                     <img src="{% static 'images/google.png' %}">
                     Login with Google
                 </a>
-                <br>
-                <a class="nav-link active btn btn-primary">
+                <a href="{% provider_login_url "facebook" method="oauth2" %}" class="button is-primary is-medium">
                     <img src="{% static 'images/facebook.png' %}">
                     Login with Facebook
                 </a>
                 <br>
-                <a class="nav-link active btn btn-primary">
-                    <img src="{% static 'images/apple.png' %}">
-                    Login with Apple
-                </a>
                 <br>
-            </div>
-        </div>
+            </section>
+        </center>
+{#        <footer class="modal-card-foot">#}
+{#        </footer>#}
     </div>
-{% endblock %}
-
+</div>
