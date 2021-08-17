@@ -1,0 +1,15 @@
+{% extends 'common/base.html' %}
+{% load static %}
+{% load socialaccount %}
+
+{% block title %}Home{% endblock %}
+
+{% block body %}
+    <br>
+    <br>
+    {% if user.is_authenticated %}
+        <h1>Welcome, {{ user.socialaccount_set.all.0.extra_data.name }}</h1>
+    {% else %}
+        <h1>Please sign in to access your todos.</h1>
+    {% endif %}
+{% endblock %}
